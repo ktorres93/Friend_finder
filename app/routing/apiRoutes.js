@@ -7,6 +7,12 @@ module.exports = function(app) {
     // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
     // ---------------------------------------------------------------------------
 
-    app.get("/api/planeteers", function(req, res) {
+    app.get("/api/planeteers", function (req, res) {
         res.json(planateerData);
     });
+    app.post("/api/planeteers", function (req, res) {
+        planeteerData.push(req.body);
+        console.log(planateerData);
+    res.json(planateerData);
+    });
+};
